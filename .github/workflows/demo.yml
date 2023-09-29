@@ -15,6 +15,6 @@ jobs:
       # Runs a set of commands using the runners shell
       - name: Run a multi-line script
         run: |
-          ls -l $GITHUB_WORKSPACE
-          ls $HOME
-          $GITHUB_EVENT_PATH
+          ls /home/runer
+          #ls $HOME
+          #$GITHUB_EVENT_PATH
