@@ -1,20 +1,13 @@
-name: CI
-on:
-  push:
-    branches: [ "main" ]
+name: issue-translator
 
+on: 
+  issues:
+    types: [opened]
+  issue_comment: 
+    types: [created]  
+  
 jobs:
-  build:
+  build: 
     runs-on: ubuntu-latest
     steps:
-      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - uses: actions/checkout@v3
-      - name: Run a one-line script
-        run: echo Hello, world!
-
-      # Runs a set of commands using the runners shell
-      - name: Run a multi-line script
-        run: |
-          ls /home/runer
-          #ls $HOME
-          #$GITHUB_EVENT_PATH
+      - uses: tomsun28/issues-translate-action@v2.3
